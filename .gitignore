@@ -1,0 +1,14 @@
+# Foundry
+cache/
+out/
+broadcast/
+
+# Dependencies (installed via `forge install`)
+lib/
+
+# Env
+.env
+
+# OS
+.DS_Store
+bin/
