@@ -10,6 +10,18 @@
 
 ---
 
+<p align="center">
+  <img src="docs/architecture.png" alt="How governance works here" width="100%">
+</p>
+
+### How governance works here
+
+Three contracts work together. `DAOGovernanceToken` is an ERC-20 with `ERC20Votes`, so voting weight is checkpointed and can be delegated by signature. The `DAO` contract owns the proposal lifecycle — create, vote, execute, cancel — and enforces quorum and majority thresholds before anything moves. `DAOTreasury` holds ERC-20 tokens and ETH, but it **cannot be spent directly**: `spendFunds` only accepts a call routed through `DAO.execute`, so the treasury is governed by the same votes that parameterise the DAO.
+
+
+
+---
+
 ## 🎯 What it does
 
 A complete on-chain governance system where token holders can:
